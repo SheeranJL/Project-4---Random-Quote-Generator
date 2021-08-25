@@ -8,15 +8,16 @@ Project 4 - Random Quote Generator
   // Reach out in your Slack community
 
 /***
- * `quotes` array
+ * `quotes` array - Here I initialised an array and played 5 objects inside with their own properties. To make it easier to read, I placed each object on a new line.
+
 ***/
 
 let quotes = [
 {
-  quote: 'The greatest glory in living lies not in never falling, but in rising every time we fall.',
-  source: 'Nelson Mandela',
-  citation: 'testtest',
-  year: 2000
+  quote: "That's one small step for a man, one giant leap for mankind.",
+  source: 'Neil Armstrong',
+  citation: 'NASA',
+  year: 1969
 },
 {
   quote: 'The way to get started is to quit talking and begin doing.',
@@ -38,7 +39,9 @@ let quotes = [
 
 
 /***
- * `getRandomQuote` function
+ * `getRandomQuote` function - Here I've created a function which uses Math.random to return a random quote from the 'quotes' array between index 0-4.
+    Since arrays start at an index value of zero, I did not need to set a minimum value since there's a chance the random number will be rounded down to
+    zero by using Math.floor which is what I want for the first quote to display.
 ***/
 
 function getRandomQuote () {
@@ -49,7 +52,12 @@ function getRandomQuote () {
 
 
 /***
- * `printQuote` function
+ * `printQuote` function - This function I created calls the getRandomQuote function above and then assigns the quote to a variable named quoteObject.
+    Using template literals (because I find them way easier to work with) I started constructing my HTML and inserted the quote using the quoteObject variable
+    and specifically targeted the properties that were relevant for each section of the string.
+    Furthermore, I created two IF statements to run in the event there was also a citation or year property associated with the object.
+    I was thinking of using (xx ||(or)&&(and) xx) statement, however I wasn't sure if this would work as well so I kept things simple.
+
 ***/
 
 function printQuote() {
@@ -64,7 +72,6 @@ function printQuote() {
     html += '</p class="source">';
     document.getElementById('quote-box').innerHTML = html;
 }
-
 
 printQuote();
 
