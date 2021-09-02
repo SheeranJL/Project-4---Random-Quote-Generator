@@ -94,7 +94,7 @@ function printQuote() {
 ***/
 
 ///*** Here i've created a function to refresh both the quote, and the background color every 7 seconds. I then called the function and passed through both relevant functions are arguments.
-function refreshInterval(quote, background){ vc
+function refreshInterval(quote, background) {
   setInterval(quote, 7000)
   setInterval(background, 7000)
 };
